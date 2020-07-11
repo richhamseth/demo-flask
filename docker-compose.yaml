@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+
+ flaskapp:
+  image: demoflaskApp:latest
+  networks:
+  - flasknet
+
+networks:
+  flasknet:
+    external:
+      name: demoflaskApp
