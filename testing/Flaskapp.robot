@@ -1,6 +1,6 @@
 *** Settings ***
 Library  OperatingSystem
-Library  Collections
+#Library  Collections
 Library  RequestsLibrary
 
 *** Variables ***
