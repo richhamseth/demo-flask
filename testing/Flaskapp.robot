@@ -17,7 +17,7 @@ Api call to get users details
 
 Checking response for users details  
     [Arguments]  ${result}
-    Run Keyword If  "${result.json()["error"]}" == "${false}"  Should Be Equal  ${result.status_code}  ${200}
+    Run Keyword If  "${result.json()["error"]}" == "${false}"  Should Be Equal  ${result.json()["status"]}  ${200}
     Run Keyword If  "${result.json()["status"]}" == "${200}"  Should Be Equal  ${result.status_code}  ${200}
 
 *** Test Cases ***
