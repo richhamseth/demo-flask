@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/users')
 def users():
-	response = jsonify ( {'status': 400, "error": False, 'data': [{"name":"bob"},{"name":"sam"},{"name":"will"},{"name":"cardin"}]} )
+	response = jsonify ( {'status': 200, "error": False, 'data': [{"name":"bob"},{"name":"sam"},{"name":"will"},{"name":"cardin"}]} )
 	return response
 
 if __name__ == '__main__':
