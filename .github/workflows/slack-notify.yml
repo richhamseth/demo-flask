@@ -1,17 +1,13 @@
-name: slack-notification
-
-on: [push, pull_request, issues]
+on: [push, pull_request]
 
 jobs:
-  slack-notifications:
+  build:
     runs-on: ubuntu-latest
-    name: Sends a message to Slack when a push, a pull request or an issue is made
+
     steps:
-      - name: Send message to Slack API
-        uses: archive/github-actions-slack@master
-        with:
-          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
-          slack-channel: test
-          slack-text: Hello! Event "${{ github.event_name }}" in "${{ github.repository }}" 🤓
-      - name: Result from "Send Message"
-        run: echo "The result was ${{ steps.notify.outputs.slack-result }}"
+    - name: Create the Mattermost Message
+      run: |
+        echo "{\"text\":\"testing github action :tada:\"}" > mattermost.json
+    - uses: mattermost/action-mattermost-notify@master
+      env:
+        MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
