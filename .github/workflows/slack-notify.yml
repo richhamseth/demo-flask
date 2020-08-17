@@ -8,6 +8,6 @@ jobs:
     - name: Create the Mattermost Message
       run: |
         echo "{\"text\":\"testing github action :tada:\"}" > mattermost.json
-    - uses: richhamseth/demo-flask@master
+    - uses: richhamseth/demo-flask@fetaure/notification
       env:
         MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
