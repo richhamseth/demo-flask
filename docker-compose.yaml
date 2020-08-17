@@ -10,4 +10,4 @@ services:
 networks:
   flasknet:
     external:
-      name: demoflask
+      name: demoflaskApp
