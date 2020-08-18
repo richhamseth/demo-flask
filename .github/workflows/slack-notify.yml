@@ -11,4 +11,5 @@ jobs:
       env:
         SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
         SLACK_USERNAME: github-notification
+        SLACK_FOOTER: Powered By CCS
         SLACK_WEBHOOK: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
