@@ -1,13 +1,12 @@
-on: [push, pull_request]
-
+on: push
+name: Slack Notification Demo
 jobs:
-  build:
+  slackNotification:
+    name: Slack Notification
     runs-on: ubuntu-latest
-
     steps:
-    - name: Create the Mattermost Message
-      run: |
-        echo "{\"text\":\"@here testing github action :tada:\"}" > mattermost.json
-    - uses: mattermost/action-mattermost-notify@1.0.2
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@master
       env:
-        MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+        SLACK_WEBHOOK: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
