@@ -9,4 +9,6 @@ jobs:
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@master
       env:
+        SLACK_ICON: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F285645%2Fuser_icon&psig=AOvVaw1pwmQ4DCllZre8mRInSeu1&ust=1597824913288000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjBhOWnpOsCFQAAAAAdAAAAABAD
+        SLACK_USERNAME: github-notification
         SLACK_WEBHOOK: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
